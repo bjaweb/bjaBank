@@ -18,22 +18,22 @@ public class JDBCConnect {
 			Class.forName("com.mysql.jdbc.Driver") ;
 		         
 //		      String url = "jdbc:mysql://localhost:3306/test?user=admin&password=admin";
-			String url = "jdbc:mysql://bjanas:3306/test";
-		      String user = "root";
-		      String passwd = "toto";
+			String url = "jdbc:mysql://bjanas:3306/mysql";
+//		      String user = "root";
+//		      String passwd = "toto";
 		         
 //			  String user = "admin";
 //		      String passwd = "admin";
 			
-//			  String user = "ben";
-//		      String passwd = "benjanv";
+			  String user = "ben";
+		      String passwd = "benjanv";
 		      
 		      Connection conn = DriverManager.getConnection(url, user, passwd);
 		         
 		      //Création d'un objet Statement
 		      Statement state = conn.createStatement();
 		      //L'objet ResultSet contient le résultat de la requête SQL
-		      ResultSet result = state.executeQuery("SELECT * FROM CONTACT");
+		      ResultSet result = state.executeQuery("SELECT * FROM user");
 		      //On récupère les MetaData
 		      ResultSetMetaData resultMeta = result.getMetaData();
 		         
