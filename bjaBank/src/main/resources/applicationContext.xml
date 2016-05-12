@@ -18,7 +18,8 @@
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
 	<import resource="classpath:/datasource.xml" />
-
+	<import resource="classpath:/spring-config-bappsSocleDao.xml" />
+	
 	<!-- Scans within the base package of the application for @Components to configure as beans -->
 	<bean id="placeholderConfig"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -28,6 +29,7 @@
 		
 	<!-- scanner  entimanager basé sur @persistenceContext :  il faut le scaner dans les classes-->
 	<context:annotation-config />
+	<!-- permet de scanner tout bean dans ce pakage -->
 	<context:component-scan base-package="com.bja.bapps.*" />
 	
 	
@@ -51,6 +53,35 @@
     </bean> -->
     	
 
+	<!-- 
+	 <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" >
+            	<property name="showSql" value="true" />
+				<property name="generateDdl" value="true" />
+				<property name="databasePlatform" value="${db.dialect}" />
+				<property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect" /> 
+           </bean>
+            
+        </property>        
+        
+        fonctionne avec le package com.bja.bapps : scanne le fichier persistence.xml
+        <property name="packagesToScan" value="com.bja.bapps"/>
+        
+   
+         <property name="jpaProperties">
+         <props>
+            <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            <prop key="hibernate.show_sql">true</prop>
+            <prop key="hibernate.max_fetch_depth">3</prop>
+            <prop key="hibernate.jdbc.fetch_size">50</prop>            
+         </props>
+      </property>
+    </bean>
+  -->
 	
 	
 	</beans>
