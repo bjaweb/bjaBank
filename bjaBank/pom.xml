@@ -126,7 +126,20 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-
+		
+<!-- 		<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>		
+				 <scope>provided</scope>	  
+		</dependency> -->
+		<!-- <dependency>
+		    	<groupId>javax.servlet</groupId>
+			    <artifactId>jsp-api</artifactId>
+			    <version>2.1</version>
+			   	 <scope>provided</scope>	 	    
+		</dependency>
+ -->
 		<!-- View Dependencies -->
 		<dependency>
 			<groupId>taglibs</groupId>
@@ -135,9 +148,17 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+    <groupId>com.jolbox</groupId>
+    <artifactId>bonecp-provider</artifactId>
+    <version>0.8.0-alpha1</version>
+</dependency>
 
-
-
+<dependency>
+    <groupId>com.jolbox</groupId>
+    <artifactId>bonecp</artifactId>
+    <version>0.8.0.RELEASE</version>
+</dependency>
 
 	</dependencies>
 
