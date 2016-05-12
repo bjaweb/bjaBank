@@ -5,20 +5,52 @@
       http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
 
-	<!--datasource declarée ici en jpa, transaction : ressource local : tx gérées par l'appli  -->
+	<!--datasource declarée ici en jpa, transaction : ressource local : tx gérées 
+		par l'appli -->
 	<persistence-unit name="MY_P_U" transaction-type="RESOURCE_LOCAL">
-		<!-- on precise qu'on utilise hibernate mais pas obligatoire car idee faire un code qui utilise le framwork exitant sur le serveur d'appli -->
+		<!-- <persistence-unit name="MY_P_U"> -->
+		<!-- <persistence-unit name="MY_P_U" transaction-type="JTA"> -->
+		<!-- on precise qu'on utilise hibernate mais pas obligatoire car idee faire 
+			un code qui utilise le framwork exitant sur le serveur d'appli -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
 		<properties>
-		    <!-- la base est crée au demarage de l'appli -->
-			<!-- <property name="hibernate.hbm2ddl.auto" value="create" /> --> 
-			 <!-- <property name="hibernate.hbm2ddl.auto" value="create-update" /> --> 
-			 <property name="hibernate.hbm2ddl.auto" value="create-drop" /> 
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.transaction.flush_before_completion" value="true" />
-			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />	
-			<property name="hibernate.dialect" value="${db.dialect}"/>		
+			<!-- la base est crée au demarage de l'appli -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create" /> -->
+			<property name="hibernate.dialect" value="${db.dialect}" />
+			
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+			
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create-update" /> -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create" /> -->
+			<!-- <property name="hibernate.show_sql" value="true" /> -->
+<!-- 
+			<property name="hibernate.connection.driver_class" value="${db.driver}" />
+			<property name="hibernate.connection.username" value="${db.username}" />
+			<property name="hibernate.connection.password" value="${db.password}" />
+			<property name="hibernate.connection.url" value="${db.url}" />
+  -->
+<!-- 
+			<property name="hibernate.transaction.flush_before_completion"
+				value="true" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
+ -->
 		</properties>
 	</persistence-unit>
 
 </persistence>
+
+<!-- <?xml version="1.0" encoding="UTF-8"?> <persistence xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0"> 
+	datasource declarée ici en jpa, transaction : ressource local : tx gérées 
+	par l'appli <persistence-unit name="MY_P_U" transaction-type="RESOURCE_LOCAL"> 
+	on precise qu'on utilise hibernate mais pas obligatoire car idee faire un 
+	code qui utilise le framwork exitant sur le serveur d'appli <provider>org.hibernate.ejb.HibernatePersistence</provider> 
+	<properties> la base est crée au demarage de l'appli <property name="hibernate.hbm2ddl.auto" 
+	value="create" /> <property name="hibernate.hbm2ddl.auto" value="create-update" 
+	/> <property name="hibernate.hbm2ddl.auto" value="create" /> <property name="hibernate.show_sql" 
+	value="true" /> <property name="hibernate.transaction.flush_before_completion" 
+	value="true" /> <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" 
+	/> <property name="hibernate.dialect" value="${db.dialect}"/> </properties> 
+	</persistence-unit> </persistence> -->
