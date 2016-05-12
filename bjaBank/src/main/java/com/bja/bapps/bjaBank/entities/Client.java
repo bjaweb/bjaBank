@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="CLIENTS")
-public class Client implements Serializable{
+public class Client extends BaseEntity implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -67,7 +67,28 @@ public class Client implements Serializable{
 	public Client(String nomClient, String prenom, String adresseClient) {
 		super();
 		this.nomClient = nomClient;
+		this.prenomClient = prenom;
 		this.adresseClient = adresseClient;
+	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Client [codeClient=");
+		builder.append(codeClient);
+		builder.append(", nomClient=");
+		builder.append(nomClient);
+		builder.append(", prenomClient=");
+		builder.append(prenomClient);
+		builder.append(", adresseClient=");
+		builder.append(adresseClient);
+		try{
+		builder.append(", comptes=");
+		builder.append(comptes);
+		}catch(Exception e){
+			log.error("impossible de charger le compte ",e);
+		}
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	
