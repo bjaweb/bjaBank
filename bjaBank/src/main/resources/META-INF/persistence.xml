@@ -17,7 +17,9 @@
 		<properties>
 			<!-- la base est crée au demarage de l'appli -->
 			<!-- <property name="hibernate.hbm2ddl.auto" value="create" /> -->
-			<property name="hibernate.dialect" value="${db.dialect}" />
+			<!-- <property name="hibernate.dialect" value="${hibernate.dialect}" /> -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			
 			
 			<!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
 			
