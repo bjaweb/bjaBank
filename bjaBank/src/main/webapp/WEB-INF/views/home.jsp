@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1> 
-	Hello world!
+	Bienvenue sur bjaBank!
 </h1>
 ${controllerMessage}
 </body>
