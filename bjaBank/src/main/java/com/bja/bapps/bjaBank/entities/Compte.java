@@ -131,13 +131,20 @@ public class Compte implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Compte(String codeCompte, Date dateCreation, double solde) {
+//	public Compte(String codeCompte, Date dateCreation, double solde) {
+//		super();
+//		this.codeCompte = codeCompte;
+//		this.dateCreation = dateCreation;
+//		this.solde = solde;
+//	}
+//	
+	
+	public Compte(String codeCompte,  double solde) {
 		super();
 		this.codeCompte = codeCompte;
-		this.dateCreation = dateCreation;
+		this.dateCreation = new Date();
 		this.solde = solde;
 	}
-	
 	
 	
 }

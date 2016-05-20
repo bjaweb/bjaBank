@@ -24,8 +24,8 @@ public class CompteEpargne extends Compte{
 		// TODO Auto-generated constructor stub
 	}
 
-	public CompteEpargne(String codeCompte, Date dateCreation, double solde, double taux) {
-		super(codeCompte, dateCreation, solde);
+	public CompteEpargne(String codeCompte, double solde, double taux) {
+		super(codeCompte,  solde);
 		this.taux = taux;
 	}
 

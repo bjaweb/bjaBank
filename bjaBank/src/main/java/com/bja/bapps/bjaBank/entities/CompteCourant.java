@@ -24,12 +24,15 @@ public class CompteCourant extends Compte{
 		// TODO Auto-generated constructor stub
 	}
 
-	public CompteCourant(String codeCompte, Date dateCreation, double solde, double decouvert) {
-		super(codeCompte, dateCreation, solde);
+//	public CompteCourant(String codeCompte, Date dateCreation, double solde, double decouvert) {
+//		super(codeCompte, dateCreation, solde);
+//		this.decouvert = decouvert;
+//	}
+
+	public CompteCourant(String codeCompte,  double solde, double decouvert) {
+		super(codeCompte,  solde);
 		this.decouvert = decouvert;
 	}
-
-
 	
 	
 }
