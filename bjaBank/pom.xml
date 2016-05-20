@@ -24,11 +24,17 @@
 
 
 
-		<dependency>
+<!-- 		<dependency>
 			<groupId>com.bja.bapps.tools</groupId>
 			<artifactId>BappsTools-DAO</artifactId>
 			<version>${bappsTools.version}</version>
 		</dependency>
+ -->		
+		<dependency>
+			<groupId>com.bja.bapps.tools</groupId>
+			<artifactId>BappsTools-DAO-JPA</artifactId>
+			<version>${bappsTools.version}</version>
+		</dependency> 
 
 		<!-- pour faire du spring-MVC -->
 		<dependency>
